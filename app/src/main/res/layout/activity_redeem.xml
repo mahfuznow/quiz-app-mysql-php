@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:background="#000"
+    tools:context=".Redeem">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adViewBottom"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adViewTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-7276244347231081/6917822799"
+                />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/balanceCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adViewTop"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:background="@drawable/semi_round"
+                    android:backgroundTint="#D8D6D6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_wallet" />
+
+                    <TextView
+                        android:id="@+id/walletBalanceText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Current point is "
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/balanceCard"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="Withdraw"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/withdrawGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <RadioButton
+                            android:id="@+id/rechargeOption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Recharge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/bkashOption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Bkash"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/rocketOption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:text="Rocket"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/mobileText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/edit_border"
+                        android:fontFamily="monospace"
+                        android:hint="Mobile Number"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="#fff" />
+
+                    <EditText
+                        android:id="@+id/amountText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/edit_border"
+                        android:fontFamily="monospace"
+                        android:hint="Amount in Point"
+                        android:inputType="numberSigned"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="#fff" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/balanceWarning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:text="You don't have enough point to withdraw"
+                            android:textColor="#eb1111"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/otherWarning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:text="You don't have enough point for Bkash/Rocket withdraw"
+                            android:textColor="#eb1111"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/withdrawButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/withdraw_ash"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:text="Withdraw"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="* Minimum required points for Mobile Recharge 100\n* Minimum required points for Bkash/Rocket 1000" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7276244347231081/6917822799"
+        />
+
+</RelativeLayout>

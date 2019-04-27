@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Home"
+    tools:showIn="@layout/app_bar_home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b4"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/semi_round2"
+                android:backgroundTint="#a084d1"
+                android:drawableTop="@drawable/general"
+                android:paddingTop="25dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="General Knowledge"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/b5"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/semi_round2"
+                android:backgroundTint="#80e7a9"
+                android:drawableTop="@drawable/science"
+                android:paddingTop="25dp"
+                android:text="Science"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b6"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_weight="1"
+                android:background="@drawable/semi_round2"
+                android:backgroundTint="#d9dbd0"
+                android:drawableTop="@drawable/english"
+                android:paddingTop="40dp"
+                android:text="English"
+                android:textAllCaps="false"
+                android:textColor="#2f2e2e"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/b7"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/semi_round2"
+                android:backgroundTint="#cc8d66"
+                android:drawableTop="@drawable/books"
+                android:paddingTop="25dp"
+                android:text="Authors"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/b8"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/semi_round2"
+                android:backgroundTint="#63c28c"
+                android:drawableLeft="@drawable/maths"
+                android:paddingLeft="35dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Mathematics"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</ScrollView>
