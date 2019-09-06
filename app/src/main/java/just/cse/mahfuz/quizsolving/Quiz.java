@@ -129,21 +129,23 @@ public class Quiz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (!checkInternet(Quiz.this)) {
-                    showNextQuestion();
+//                if (!checkInternet(Quiz.this)) {
+//                    showNextQuestion();
+//
+//                } else {
+//                    if (interstitialAd.isLoaded()) {
+//                        interstitialAd.show();
+//                        showNextQuestion();
+//
+//                    } else {
+//                        loadInterstitialAd(true);
+//                        //interstitialAd.show();
+//                        //showNextQuestion();
+//
+//                    }
+//                }
 
-                } else {
-                    if (interstitialAd.isLoaded()) {
-                        interstitialAd.show();
-                        showNextQuestion();
-
-                    } else {
-                        loadInterstitialAd(true);
-                        //interstitialAd.show();
-                        //showNextQuestion();
-
-                    }
-                }
+                showNextQuestion();
             }
         });
 
@@ -179,8 +181,8 @@ public class Quiz extends AppCompatActivity {
 
     private void showNextQuestion() {
 
-        if (interstitialAd.isLoaded())
-            interstitialAd.show();
+//        if (interstitialAd.isLoaded())
+//            interstitialAd.show();
 
         if (userAnswer.equals(solution)) {
             ++correctAnswer;
@@ -191,24 +193,30 @@ public class Quiz extends AppCompatActivity {
 
         } else if (next.getText().toString().equals("Finish")) {
 
-            if (checkInternet(Quiz.this)) {
-                loadInterstitialAd(true);
-                change = true;
+//            if (checkInternet(Quiz.this)) {
+//                loadInterstitialAd(true);
+//                change = true;
+//
+//            } else {
+//                startActivity(new Intent(Quiz.this, QuizResultActivity.class)
+//                        .putExtra("result", correctAnswer)
+//                        .putExtra("point", point)
+//                );
+//                finish();
+//            }
 
-            } else {
-                startActivity(new Intent(Quiz.this, QuizResultActivity.class)
-                        .putExtra("result", correctAnswer)
-                        .putExtra("point", point)
-                );
-                finish();
-            }
+            startActivity(new Intent(Quiz.this, QuizResultActivity.class)
+                    .putExtra("result", correctAnswer)
+                    .putExtra("point", point)
+            );
+            finish();
 
         }
 
     }
 
     private void startQuiz() {
-        questionNumberText.setText("Question " + questionNumber + " / 30");
+        questionNumberText.setText("Question " + questionNumber + " / 10");
 
         if(quizzes!= null && quizzes.size() !=0) {
 
@@ -280,22 +288,24 @@ public class Quiz extends AppCompatActivity {
 
     private void startCount() {
         next.setBackgroundResource(R.drawable.signup_back);
-        timer = new CountDownTimer(10000, 1000) {
+        timer = new CountDownTimer(1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                status += 1;
-                next.setText("Next question in ");
-                next.append("" + (10 - status));
-                next.append(" seconds");
+//                status += 1;
+//                next.setText("Next question in ");
+//                next.append("" + (5 - status));
+//                next.append(" seconds");
+//
+//                Log.e("ERRO", "start count"+" "+status+" "+questionNumber);
 
-                Log.e("ERRO", "start count"+" "+status+" "+questionNumber);
+                next.setText("Next");
             }
 
             @Override
             public void onFinish() {
                 questionNumber++;
 
-                if (questionNumber == 30) { // TODO: Change to 20
+                if (questionNumber == 10) { // TODO: Change to 20
                     next.setText("Finish");
                     next.setBackgroundResource(R.drawable.loginbtn_back);
 
@@ -336,7 +346,7 @@ public class Quiz extends AppCompatActivity {
                 super.onAdLeftApplication();
 
 
-                if (questionNumber == 30) { // TODO: Change value
+                if (questionNumber == 10) { // TODO: Change value
                     point = "true";
                 }
             }
