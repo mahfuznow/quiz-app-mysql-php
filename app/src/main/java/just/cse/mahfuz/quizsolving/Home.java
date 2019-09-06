@@ -156,7 +156,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }else if (id == R.id.nav_contact) {
             Intent emailIntent = new Intent();
             emailIntent.setAction(Intent.ACTION_SENDTO);
-            emailIntent.setData(Uri.parse("mailto:info@Mymmbd.ooo"));
+            emailIntent.setData(Uri.parse("mailto:mahfuz.cse.just@gmail.com"));
             startActivity(emailIntent);
 
         } else if (id == R.id.nav_share) {
